@@ -501,7 +501,6 @@ def fed_admin(update, context):
 
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
-    args = context.args
 
     if chat.type == "private":
         send_message(
@@ -1844,7 +1843,6 @@ def del_fed_button(update, context):
 @run_async
 @typing_action
 def fed_stat_user(update, context):
-    user = update.effective_user  # type: Optional[User]
     msg = update.effective_message  # type: Optional[Message]
     args = context.args
 
@@ -1996,7 +1994,6 @@ def set_fed_log(update, context):
 def unset_fed_log(update, context):
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
-    msg = update.effective_message  # type: Optional[Message]
     args = context.args
 
     if chat.type == "private":
@@ -2217,7 +2214,6 @@ def get_myfedsubs(update, context):
 @run_async
 @typing_action
 def get_myfeds_list(update, context):
-    chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
     msg = update.effective_message  # type: Optional[Message]
     args = context.args

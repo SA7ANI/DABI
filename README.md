@@ -5,7 +5,6 @@
 
 ![logo](https://telegra.ph/file/520390414f9d62b2e5c65.jpg)
 
-
 A modular telegram Python bot running on python3 with an sqlalchemy database.
 
 Originally a simple group management bot with multiple admin features, it has evolved, becoming extremely modular and 
@@ -19,15 +18,15 @@ Sponge Bob is based on [Skylee](https://github.com/starry69/skyleebot)
 
 -----
 
-*  [@PaulSonOfLars](https://github.com/PaulSonOfLars) - For Marie and Rosecreator, inspiration to do many things.
-*  [@Starry69](https://github.com/starry69) - For Skylee Fork.
-*  [@Skittle](https://github.com/Skittle) - For Stickers module and memes in extras module.
-*  [@1mavarick1](https://github.com/1maverick1) - For Introducing Global Mutes and other things.
-*  [@AyraHikari](https://github.com/AyraHikari) - for Reworked Welcome, Fed v2, Weather modules and some other stuffs.
-*  [@RealAkito](https://github.com/RealAkito) - For Reworked Federation, reverse search and other things.
-*  [@MrYacha](https://github.com/MrYacha) - for Welcome Security base, Connections and other things.
-*  [@Skittle](https://github.com/Skittle) - For Memes and Sticker stuff.
-*  [@ATechnoHazard](https://github.com/ATechnoHazard) - For many stuffs
+[@PaulSonOfLars](https://github.com/PaulSonOfLars) - For Marie and Rosecreator, inspiration to do many things.
+[@Starry69](https://github.com/starry69) - For Skylee Fork.
+[@Skittle](https://github.com/Skittle) - For Stickers module and memes in extras module.
+[@1mavarick1](https://github.com/1maverick1) - For Introducing Global Mutes and other things.
+[@AyraHikari](https://github.com/AyraHikari) - for Reworked Welcome, Fed v2, Weather modules and some other stuffs.
+[@RealAkito](https://github.com/RealAkito) - For Reworked Federation, reverse search and other things.
+[@MrYacha](https://github.com/MrYacha) - for Welcome Security base, Connections and other things.
+[@Skittle](https://github.com/Skittle) - For Memes and Sticker stuff.
+[@ATechnoHazard](https://github.com/ATechnoHazard) - For many stuffs
 
 And much more that we couldn't list it here!
 
