@@ -5,7 +5,7 @@ import base64
 from io import BytesIO
 from PIL import Image
 from telegram.ext import run_async, CommandHandler
-from spongebob import dispatcher, spamcheck
+from spongebob import dispatcher
 
 
 
@@ -25,7 +25,7 @@ def thonkify(update, context):
     # the telegram doesnt support any longer dimensions +
     # you have the lulz
     if (len(msg)) > 39:
-        message.reply_text, "Thonk yourself!"
+        message.reply_text("Thonk yourself!")
         return
 
     tracking = Image.open(BytesIO(base64.b64decode(
