@@ -67,18 +67,15 @@ def gban(update, context):
         return
 
     if int(user_id) in SUDO_USERS:
-        send_message(update.effective_message,
-                                                  "I spy, with my little eye... a sudo user war! Why are you guys turning on each other? 😱"))
+        send_message(update.effective_message, "I spy, with my little eye... a sudo user war! Why are you guys turning on each other? 😱")
         return
 
     if int(user_id) in SUPPORT_USERS:
-        send_message(update.effective_message,
-                                                  "OOOH someone's trying to gban a support User! 😄 *grabs popcorn*"))
+        send_message(update.effective_message, "OOOH someone's trying to gban a support User! 😄 *grabs popcorn*")
         return
 
     if user_id == context.bot.id:
-        send_message(update.effective_message,
-                        "😑 So funny, lets gban myself why don't I? Nice try. 😒"))
+        send_message(update.effective_message, "😑 So funny, lets gban myself why don't I? Nice try. 😒")
         return
 
     try:
