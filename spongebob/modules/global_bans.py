@@ -6,8 +6,8 @@ from telegram.error import BadRequest, TelegramError
 from telegram.ext import run_async, CommandHandler, MessageHandler, Filters
 from telegram.utils.helpers import mention_html
 
-import skylee.modules.sql.global_bans_sql as sql
-from skylee import (
+import spongebob.modules.sql.global_bans_sql as sql
+from spongebob import (
     dispatcher,
     OWNER_ID,
     SUDO_USERS,
@@ -16,11 +16,11 @@ from skylee import (
     MESSAGE_DUMP,
     spamwtc,
 )
-from skylee.modules.helper_funcs.chat_status import user_admin, is_user_admin
-from skylee.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from skylee.modules.helper_funcs.filters import CustomFilters
-from skylee.modules.helper_funcs.alternate import typing_action, send_action
-from skylee.modules.sql.users_sql import get_all_chats
+from spongebob.modules.helper_funcs.chat_status import user_admin, is_user_admin
+from spongebob.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from spongebob.modules.helper_funcs.filters import CustomFilters
+from spongebob.modules.helper_funcs.alternate import typing_action, send_action
+from spongebob.modules.sql.users_sql import get_all_chats
 
 GBAN_ENFORCE_GROUP = 6
 
@@ -394,7 +394,7 @@ def __user_info__(user_id):
         user = sql.get_gbanned_user(user_id)
         if user.reason:
             text += "\nReason: {}".format(html.escape(user.reason))
-            text += "\n\nAppeal at @skyleebot if you think it's invalid."
+            text += "\n\nAppeal at @SpongeBobNobot if you think it's invalid."
     else:
         text = text.format("No")
     return text
