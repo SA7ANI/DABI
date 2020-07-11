@@ -1,1 +1,1 @@
-worker: python3 -m spongebob
+web: python3 -m spongebob
