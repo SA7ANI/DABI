@@ -4,12 +4,11 @@
 import base64
 from io import BytesIO
 from PIL import Image
-from telegram.ext import run_async, CommandHandler
+from telegram.ext import run_async
+from spongebob.modules.disable import DisableAbleCommandHandler
 from spongebob import dispatcher
 
 
-
-@spamcheck
 @run_async
 def thonkify(update, context):
     from spongebob.modules.helper_funcs.thonkify_dict import thonkifydict
@@ -60,6 +59,6 @@ def thonkify(update, context):
         context.bot.send_sticker(chat_id=message.chat_id, sticker=buffer)
 
 
-THONKIFY_HANDLER = CommandHandler("thonkify", thonkify)
+THONKIFY_HANDLER = DisableAbleCommandHandler("thonkify", thonkify)
 
 dispatcher.add_handler(THONKIFY_HANDLER)
