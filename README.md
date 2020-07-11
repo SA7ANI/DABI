@@ -1,5 +1,6 @@
 # SPONGEBOB
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1fee623d1b8a4160b1c8edfe6d09e34b)](https://app.codacy.com/manual/PatrickDeadStar/SpongeBob?utm_source=github.com&utm_medium=referral&utm_content=PatrickDeadStar/SpongeBob&utm_campaign=Badge_Grade_Dashboard)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
