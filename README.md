@@ -16,8 +16,7 @@ Can be found on telegram as [SpongeBob](https://t.me/SpongeBobNobot).
 Sponge Bob is based on [Skylee](https://github.com/starry69/skyleebot)
 
 ## Special Credits
-
------
+------------------
 
 [@PaulSonOfLars](https://github.com/PaulSonOfLars) - For Marie and Rosecreator, inspiration to do many things.
 

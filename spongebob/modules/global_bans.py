@@ -17,7 +17,6 @@ from spongebob.modules.helper_funcs.extraction import extract_user, extract_user
 from spongebob.modules.helper_funcs.misc import send_to_list
 from spongebob.modules.helper_funcs.filters import CustomFilters
 from spongebob.modules.sql.users_sql import get_all_chats
-from spongebob.modules.languages import tl
 from spongebob.modules.helper_funcs.alternate import send_message
 
 GBAN_ENFORCE_GROUP = 6
@@ -59,29 +58,26 @@ def gban(update, context):
     user_id, reason = extract_user_and_text(message, args)
     if user_id == "error":
         send_message(
-            update.effective_message, tl(
-                update.effective_message, reason))
+            update.effective_message, reason)
         return ""
 
     if not user_id:
         send_message(
-            update.effective_message, tl(
-                update.effective_message, "You don't seem to be referring to a user."))
+            update.effective_message, "You don't seem to be referring to a user.")
         return
 
     if int(user_id) in SUDO_USERS:
-        send_message(update.effective_message, tl(update.effective_message,
+        send_message(update.effective_message,
                                                   "I spy, with my little eye... a sudo user war! Why are you guys turning on each other? 😱"))
         return
 
     if int(user_id) in SUPPORT_USERS:
-        send_message(update.effective_message, tl(update.effective_message,
+        send_message(update.effective_message,
                                                   "OOOH someone's trying to gban a support User! 😄 *grabs popcorn*"))
         return
 
     if user_id == context.bot.id:
         send_message(update.effective_message,
-                     tl(update.effective_message,
                         "😑 So funny, lets gban myself why don't I? Nice try. 😒"))
         return
 
@@ -434,13 +430,13 @@ def gbanstat(update, context):
 
 
 def __stats__():
-    return tl(OWNER_ID, "`{}` gbanned users.").format(sql.num_gbanned_users())
+    return OWNER_ID, "`{}` gbanned users.".format(sql.num_gbanned_users())
 
 
 def __user_info__(user_id, chat_id):
     is_gbanned = sql.is_user_gbanned(user_id)
 
-    text = tl(user_id, "Globally banned: <b>{}</b>")
+    text = user_id, "Globally banned: <b>{}</b>"
     if is_gbanned:
         text = text.format("Yes")
         user = sql.get_gbanned_user(user_id)
