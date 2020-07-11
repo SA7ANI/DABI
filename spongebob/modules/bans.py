@@ -394,6 +394,8 @@ This module allows you to do that easily, by exposing some common actions, so ev
  × /tban <userhandle> x(m/h/d): Bans a user for x time. (via handle, or reply). m = minutes, h = hours, d = days.
  × /unban <userhandle>: Unbans a user. (via handle, or reply)
  × /kick <userhandle>: Kicks a user, (via handle, or reply)
+ × /spamshield <on/off/yes/no>: Will disable or enable the effect of Spam protection in your group.
+Spam shield uses and Global bans to remove Spammers as much as possible from your chatroom!
 
 An example of temporarily banning someone:
 `/tban @username 2h`; this bans a user for 2 hours.
