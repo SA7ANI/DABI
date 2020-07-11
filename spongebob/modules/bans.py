@@ -387,14 +387,14 @@ __help__ = """
 Some people need to be publicly banned; spammers, annoyances, or just trolls.
 This module allows you to do that easily, by exposing some common actions, so everyone will see!
 
- × /kickme: Kicks the user who issued the command
- × /banme: Bans the user who issued the command
+ • /kickme: Kicks the user who issued the command
+ • /banme: Bans the user who issued the command
 *Admin only:*
- × /ban <userhandle>: Bans a user. (via handle, or reply)
- × /tban <userhandle> x(m/h/d): Bans a user for x time. (via handle, or reply). m = minutes, h = hours, d = days.
- × /unban <userhandle>: Unbans a user. (via handle, or reply)
- × /kick <userhandle>: Kicks a user, (via handle, or reply)
- × /spamshield <on/off/yes/no>: Will disable or enable the effect of Spam protection in your group.
+ • /ban <userhandle>: Bans a user. (via handle, or reply)
+ • /tban <userhandle> x(m/h/d): Bans a user for x time. (via handle, or reply). m = minutes, h = hours, d = days.
+ • /unban <userhandle>: Unbans a user. (via handle, or reply)
+ • /kick <userhandle>: Kicks a user, (via handle, or reply)
+ • /spamshield <on/off/yes/no>: Will disable or enable the effect of Spam protection in your group.
 Spam shield uses and Global bans to remove Spammers as much as possible from your chatroom!
 
 An example of temporarily banning someone:

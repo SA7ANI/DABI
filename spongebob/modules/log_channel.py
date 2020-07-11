@@ -146,7 +146,7 @@ if is_module_loaded(FILENAME):
             message.reply_text("No log channel has been set yet!")
 
     def __stats__():
-        return "× {} log channels have been set.".format(sql.num_logchannels())
+        return "• {} log channels have been set.".format(sql.num_logchannels())
 
     def __migrate__(old_chat_id, new_chat_id):
         sql.migrate_chat(old_chat_id, new_chat_id)
@@ -167,15 +167,15 @@ Log channels can help you keep track of exactly what the other admins are doing.
 Bans, Mutes, warns, notes - everything can be moderated.
 
 *Admin only:*
-× /logchannel: Get log channel info
-× /setlog: Set the log channel.
-× /unsetlog: Unset the log channel.
+• /logchannel: Get log channel info
+• /setlog: Set the log channel.
+• /unsetlog: Unset the log channel.
 
 Setting the log channel is done by:
-× Add the bot to your channel, as an admin. This is done via the "add administrators" tab.
-× Send /setlog to your channel.
-× Forward the /setlog command to the group you wish to be logged.
-× Congratulations! All is set!
+• Add the bot to your channel, as an admin. This is done via the "add administrators" tab.
+• Send /setlog to your channel.
+• Forward the /setlog command to the group you wish to be logged.
+• Congratulations! All is set!
 """
 
     __mod_name__ = "Log Channel"

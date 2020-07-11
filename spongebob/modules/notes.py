@@ -336,7 +336,7 @@ def list_notes(update, context):
     note_list = sql.get_all_chat_notes(chat_id)
     des = "You can get notes by using `/get notename`, or `#notename`.\n"
     for note in note_list:
-        note_name = " × `{}`\n".format(note.name.lower())
+        note_name = " • `{}`\n".format(note.name.lower())
         if len(msg) + len(note_name) > MAX_MESSAGE_LENGTH:
             update.effective_message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
             msg = ""
@@ -523,7 +523,7 @@ def __import_data__(chat_id, data):
 
 
 def __stats__():
-    return "× {} notes, across {} chats.".format(sql.num_notes(), sql.num_chats())
+    return "• {} notes, across {} chats.".format(sql.num_notes(), sql.num_chats())
 
 
 def __migrate__(old_chat_id, new_chat_id):
@@ -540,22 +540,22 @@ Save data for future users with notes!
 
 Notes are great to save random tidbits of information; a phone number, a nice gif, a funny picture - anything!
 
- × /get <notename>: Get the note with this notename
- × #<notename>: Same as /get
- × /notes or /saved: Lists all saved notes in the chat
+ • /get <notename>: Get the note with this notename
+ • #<notename>: Same as /get
+ • /notes or /saved: Lists all saved notes in the chat
 
 If you would like to retrieve the contents of a note without any formatting, use `/get <notename> noformat`. This can \
 be useful when updating a current note.
 
 *Admin only:*
- × /save <notename> <notedata>: Saves notedata as a note with name notename
+ • /save <notename> <notedata>: Saves notedata as a note with name notename
 A button can be added to a note by using standard markdown link syntax - the link should just be prepended with a \
 `buttonurl:` section, as such: `[somelink](buttonurl:example.com)`. Check /markdownhelp for more info.
- × /save <notename>: Saves the replied message as a note with name notename
- × /clear <notename>: Clears note with this name
+ • /save <notename>: Saves the replied message as a note with name notename
+ • /clear <notename>: Clears note with this name
 
 *Chat creator only:*
- × /rmallnotes: Clear all notes saved in chat at once.
+ • /rmallnotes: Clear all notes saved in chat at once.
 
  An example of how to save a note would be via:
 `/save Data This is some data!`

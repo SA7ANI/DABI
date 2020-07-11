@@ -105,10 +105,10 @@ def report(update, context) -> str:
 
             msg = (
                 f"<b>Report from: </b>{html.escape(chat.title)}\n"
-                f"<b> × Report by:</b> {mention_html(user.id, user.first_name)}(<code>{user.id}</code>)\n"
-                f"<b> × Reported user:</b> {mention_html(reported_user.id, reported_user.first_name)} (<code>{reported_user.id}</code>)\n"
+                f"<b> • Report by:</b> {mention_html(user.id, user.first_name)}(<code>{user.id}</code>)\n"
+                f"<b> • Reported user:</b> {mention_html(reported_user.id, reported_user.first_name)} (<code>{reported_user.id}</code>)\n"
             )
-            link = f'<b> × Reported message:</b> <a href="https://t.me/{chat.username}/{message.reply_to_message.message_id}">click here</a>'
+            link = f'<b> • Reported message:</b> <a href="https://t.me/{chat.username}/{message.reply_to_message.message_id}">click here</a>'
             should_forward = False
             keyboard = [
                 [
@@ -244,7 +244,7 @@ Presenting reports; if someone in your group thinks someone needs reporting, the
 an easy way to call all admins.
 
 *Admin only:*
- × /reports <on/off>: Change report setting, or view current status.
+ • /reports <on/off>: Change report setting, or view current status.
    • If done in pm, toggles your status.
    • If in chat, toggles that chat's status.
 

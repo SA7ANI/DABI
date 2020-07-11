@@ -467,22 +467,22 @@ def ports_bug(update, context):
 __help__ = """
 Some dank memes for fun or whatever!
 
- × /shrug | /cri: Get shrug or ToT.
- × /decide: Randomly answer yes no etc.
- × /abuse: Abuses the retard!
- × /table: Flips a table...
- × /runs: Reply a random string from an array of replies.
- × /slap: Slap a user, or get slapped if not a reply.
- × /pasta: Famous copypasta meme, try and see.
- × /clap: Claps on someones message!
- × /owo: UwU-fy whole text XD.
- × /roll: Rolls a dice.
- × /recite: Logical quotes to change your life.
- × /stretch:  streeeeeeetch iiiiiiit.
- × /warm: Hug a user warmly, or get hugged if not a reply.
- × /punch: Punch a user, or get punched if not a reply.
- × /thonkify <reply>/<args>: turns text into thonk text (only supports letters and none symbols for now).
- × /bug <bug>: Report bugs to @bikinBottomStaff
+ • /shrug | /cri: Get shrug or ToT.
+ • /decide: Randomly answer yes no etc.
+ • /abuse: Abuses the retard!
+ • /table: Flips a table...
+ • /runs: Reply a random string from an array of replies.
+ • /slap: Slap a user, or get slapped if not a reply.
+ • /pasta: Famous copypasta meme, try and see.
+ • /clap: Claps on someones message!
+ • /owo: UwU-fy whole text XD.
+ • /roll: Rolls a dice.
+ • /recite: Logical quotes to change your life.
+ • /stretch:  streeeeeeetch iiiiiiit.
+ • /warm: Hug a user warmly, or get hugged if not a reply.
+ • /punch: Punch a user, or get punched if not a reply.
+ • /thonkify <reply>/<args>: turns text into thonk text (only supports letters and none symbols for now).
+ • /bug <bug>: Report bugs to @bikinBottomStaff
 
 *Regex based memes:*
 
