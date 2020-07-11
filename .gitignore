@@ -1,7 +1,7 @@
-skylee/config.py
+spongebob/config.py
 logfile
-skylee.session
-skylee.session-journal
+spongebob.session
+spongebob.session-journal
 *.pyc
 .idea/
 .project
@@ -13,5 +13,5 @@ okgoogle.png
 sticker.png
 kangsticker.png
 kangsticker
-skylee.mp3
+spongebob.mp3
 gpic.png

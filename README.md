@@ -1,13 +1,9 @@
-# SKYLEEBOT
-
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
-[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/Naereen/)
+# SPONGEBOB
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/843cdeb7f4124dd39eb3930939478259)](https://app.codacy.com/manual/starry69/skyleebot?utm_source=github.com&utm_medium=referral&utm_content=starry69/skyleebot&utm_campaign=Badge_Grade_Dashboard)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-![logo](https://telegra.ph/file/0dd4a92bb893c1aaa6cee.jpg)
+![logo](https://telegra.ph/file/520390414f9d62b2e5c65.jpg)
 
 
 A modular telegram Python bot running on python3 with an sqlalchemy database.
@@ -15,36 +11,31 @@ A modular telegram Python bot running on python3 with an sqlalchemy database.
 Originally a simple group management bot with multiple admin features, it has evolved, becoming extremely modular and 
 simple to use. Note that this project uses well-known Telegram-bot of it's time @BanhammerMarie_bot from Paul Larson as it's base.
 
-Can be found on telegram as [Skylee](https://t.me/skylee_bot).
+Can be found on telegram as [SpongeBob](https://t.me/SpongeBobNobot).
 
-Join the [news channel](https://t.me/skyleeupdates) if you just want to stay in the loop about new features or
-announcements.
+Sponge Bob is based on [Skylee](https://github.com/starry69/skyleebot)
 
-Alternatively, [contact my reporter bot on telegram](https://t.me/YumiUzo_bot)! (Keep all support questions in the support chat, where more people can help you.)
+## Special Credits
 
-## Credits
+-----
 
-Skittbot for Stickers module and memes in extras module.
+*  [@PaulSonOfLars](https://github.com/PaulSonOfLars) - For Marie and Rosecreator, inspiration to do many things.
+*  [@Starry69](https://github.com/starry69) - For Skylee Fork.
+*  [@Skittle](https://github.com/Skittle) - For Stickers module and memes in extras module.
+*  [@1mavarick1](https://github.com/1maverick1) - For Introducing Global Mutes and other things.
+*  [@AyraHikari](https://github.com/AyraHikari) - for Reworked Welcome, Fed v2, Weather modules and some other stuffs.
+*  [@RealAkito](https://github.com/RealAkito) - For Reworked Federation, reverse search and other things.
+*  [@MrYacha](https://github.com/MrYacha) - for Welcome Security base, Connections and other things.
+*  [@Skittle](https://github.com/Skittle) - For Memes and Sticker stuff.
+*  [@ATechnoHazard](https://github.com/ATechnoHazard) - For many stuffs
 
-1maverick1 for many stuffs.
-
-AyraHikari for weather modules and some other stuffs.
-
-RealAkito for reverse search modules.
-
-MrYacha for connections module
-
-ATechnoHazard for many stuffs
-
-corsicanu and nunopenim for android modules
-
-Any other missing Credits can be seen in commits!
+And much more that we couldn't list it here!
 
 ## Starting the bot
 
 Once you've setup your database and your configuration (see below) is complete, simply run:
 
-`python3 -m skylee`
+`python3 -m spongebob`
 
 
 ## Setting up the bot (Read this before trying to use!)
@@ -57,7 +48,7 @@ This is because markdown parsing is done by iterating through a dict, which are 
 There are two possible ways of configuring your bot: a config.py file, or ENV variables.
 
 The prefered version is to use a `config.py` file, as it makes it easier to see all your settings grouped together.
-This file should be placed in your `skylee` folder, alongside the `__main__.py` file . 
+This file should be placed in your `spongebob` folder, alongside the `__main__.py` file . 
 This is where your bot token will be loaded from, as well as your database URI (if you're using a database), and most of 
 your other settings.
 
@@ -66,12 +57,12 @@ defaults set in the sample_config, hence making it easier to upgrade.
 
 An example `config.py` file could be:
 ```
-from skylee.sample_config import Config
+from spongebob.sample_config import Config
 
 
 class Development(Config):
-    OWNER_ID =  894380120 # my telegram ID
-    OWNER_USERNAME = "starryboi"  # my telegram username
+    OWNER_ID =  834309762 # my telegram ID
+    OWNER_USERNAME = "patrickdeadstar"  # my telegram username
     API_KEY = "your bot api key"  # my api key, as provided by the botfather
     SQLALCHEMY_DATABASE_URI = 'postgresql://username:password@localhost:5432/database'  # sample db credentials
     MESSAGE_DUMP = '-1234567890' # some group chat that your bot is a member of
@@ -152,7 +143,7 @@ All that is needed is that your .py file be in the modules folder.
 
 To add commands, make sure to import the dispatcher via
 
-`from skylee import dispatcher`.
+`from spongebob import dispatcher`.
 
 You can then add commands using the usual
 
