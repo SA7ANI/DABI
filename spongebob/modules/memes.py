@@ -478,6 +478,7 @@ Some dank memes for fun or whatever!
  × /stretch:  streeeeeeetch iiiiiiit.
  × /warm: Hug a user warmly, or get hugged if not a reply.
  × /punch: Punch a user, or get punched if not a reply.
+ × /thonkify <reply>/<args>: turns text into thonk text (only supports letters and none symbols for now).
  × /bug <bug>: Report bugs to @bikinBottomStaff
 
 *Regex based memes:*
