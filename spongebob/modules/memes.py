@@ -434,34 +434,31 @@ def goodmorning(update, context):
     message.reply_text(reply, parse_mode=ParseMode.MARKDOWN)
 
 
-# Bug reporting module for X00TD PORTS!
-
+normiefont = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+weebyfont = ['卂','乃','匚','刀','乇','下','厶','卄','工','丁','长','乚','从','𠘨','口','尸','㔿','尺','丂','丅','凵','リ','山','乂','丫','乙']
 
 @run_async
-def ports_bug(update, context):
-    message = update.effective_message
-    user = update.effective_user
-    bug = message.text[len("/bug ") :]
-    chat = update.effective_chat
-
-    PORT_GRP = [-1001491240898]
-
-    if not int(chat.id) in PORT_GRP:
+def weebify(update, context):
+    args = context.args
+    msg = update.effective_message
+    if args:
+        string = " ".join(args).lower()
+    elif msg.reply_to_message:
+        string = msg.reply_to_message.text.lower()
+    else:
+        msg.reply_text(
+            "Enter some text to weebify or reply to someone's message!")
         return
 
-    if not bug:
-        message.reply_text("Submitting empty bug report won't do anything!")
-        return
+    for normiecharacter in string:
+        if normiecharacter in normiefont:
+            weebycharacter = weebyfont[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, weebycharacter)
 
-    if bug:
-        context.bot.sendMessage(
-            -1001293189761,
-            "<b>NEW BUG REPORT!</b>\n\n<b>Submitted by</b>: {}.\n\nDescription: <code>{}</code>.".format(
-                mention_html(user.id, user.first_name), bug
-            ),
-            parse_mode=ParseMode.HTML,
-        )
-        message.reply_text("Successfully submitted bug report!")
+    if msg.reply_to_message:
+        msg.reply_to_message.reply_text(string)
+    else:
+        msg.reply_text(string)
 
 
 __help__ = """
@@ -481,8 +478,8 @@ Some dank memes for fun or whatever!
  • /stretch:  streeeeeeetch iiiiiiit.
  • /warm: Hug a user warmly, or get hugged if not a reply.
  • /punch: Punch a user, or get punched if not a reply.
+ • /weebify: as a reply to a message, "weebifies" the message.
  • /thonkify <reply>/<args>: turns text into thonk text (only supports letters and none symbols for now).
- • /bug <bug>: Report bugs to @bikinBottomStaff
 
 *Regex based memes:*
 
@@ -498,6 +495,7 @@ All regex filters can be disabled incase u don't want... like: `/disable metoo`.
 
 __mod_name__ = "Memes & etc."
 
+WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify, pass_args=True)
 SHRUG_HANDLER = DisableAbleCommandHandler("shrug", shrug)
 DECIDE_HANDLER = DisableAbleMessageHandler(
     Filters.regex(r"(?i)^spongebob\?"), decide, friendly="decide"
@@ -506,7 +504,6 @@ SNIPE_HANDLER = CommandHandler(
     "snipe", snipe, pass_args=True, filters=CustomFilters.sudo_filter
 )
 ABUSE_HANDLER = DisableAbleCommandHandler("abuse", abuse)
-PORT_BUG_HANDLER = CommandHandler("bug", ports_bug)
 RUNS_HANDLER = DisableAbleCommandHandler("runs", runs)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap, pass_args=True)
 PUNCH_HANDLER = DisableAbleCommandHandler("punch", punch, pass_args=True)
@@ -532,11 +529,11 @@ GDNIGHT_HANDLER = DisableAbleMessageHandler(
 )
 
 
+dispatcher.add_handler(WEEBIFY_HANDLER)
 dispatcher.add_handler(SHRUG_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(ABUSE_HANDLER)
 dispatcher.add_handler(SNIPE_HANDLER)
-dispatcher.add_handler(PORT_BUG_HANDLER)
 dispatcher.add_handler(RUNS_HANDLER)
 dispatcher.add_handler(SLAP_HANDLER)
 dispatcher.add_handler(PUNCH_HANDLER)
