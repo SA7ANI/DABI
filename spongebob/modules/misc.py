@@ -419,6 +419,8 @@ def rmemes(update, context):
     chat = update.effective_chat
 
     SUBREDS = [
+        "blursedimages",
+        "BikiniBottomTwitter",
         "meirl",
         "dankmemes",
         "AdviceAnimals",
