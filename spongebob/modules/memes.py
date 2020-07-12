@@ -15,6 +15,10 @@ from spongebob.modules.disable import DisableAbleCommandHandler, DisableAbleMess
 import spongebob.modules.helper_funcs.fun_strings as fun
 
 
+normiefont = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+weebyfont = ['卂','乃','匚','刀','乇','下','厶','卄','工','丁','长','乚','从','𠘨','口','尸','㔿','尺','丂','丅','凵','リ','山','乂','丫','乙']
+bubblefont = []
+
 @run_async
 @typing_action
 def runs(update, context):
@@ -434,9 +438,6 @@ def goodmorning(update, context):
     message.reply_text(reply, parse_mode=ParseMode.MARKDOWN)
 
 
-normiefont = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-weebyfont = ['卂','乃','匚','刀','乇','下','厶','卄','工','丁','长','乚','从','𠘨','口','尸','㔿','尺','丂','丅','凵','リ','山','乂','丫','乙']
-
 @run_async
 def weebify(update, context):
     args = context.args
@@ -454,6 +455,30 @@ def weebify(update, context):
         if normiecharacter in normiefont:
             weebycharacter = weebyfont[normiefont.index(normiecharacter)]
             string = string.replace(normiecharacter, weebycharacter)
+
+    if msg.reply_to_message:
+        msg.reply_to_message.reply_text(string)
+    else:
+        msg.reply_text(string)
+
+
+@run_async
+def bubble(update, context):
+    args = context.args
+    msg = update.effective_message
+    if args:
+        string = " ".join(args).lower()
+    elif msg.reply_to_message:
+        string = msg.reply_to_message.text.lower()
+    else:
+        msg.reply_text(
+            "Enter some text to bubble or reply to someone's message!")
+        return
+
+    for normiecharacter in string:
+        if normiecharacter in normiefont:
+            bubblecharacter = bubblefont[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, bubblecharacter)
 
     if msg.reply_to_message:
         msg.reply_to_message.reply_text(string)
@@ -479,6 +504,7 @@ Some dank memes for fun or whatever!
  • /warm: Hug a user warmly, or get hugged if not a reply.
  • /punch: Punch a user, or get punched if not a reply.
  • /weebify: as a reply to a message, "weebifies" the message.
+ • /bubble: as a reply to a message, "black bubble" the message.
  • /thonkify <reply>/<args>: turns text into thonk text (only supports letters and none symbols for now).
 
 *Regex based memes:*
@@ -496,6 +522,7 @@ All regex filters can be disabled incase u don't want... like: `/disable metoo`.
 __mod_name__ = "Memes & etc."
 
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify, pass_args=True)
+BUBBLE_HANDLER = DisableAbleCommandHandler("bubble", bubble, pass_args=True)
 SHRUG_HANDLER = DisableAbleCommandHandler("shrug", shrug)
 DECIDE_HANDLER = DisableAbleMessageHandler(
     Filters.regex(r"(?i)^spongebob\?"), decide, friendly="decide"
@@ -530,6 +557,7 @@ GDNIGHT_HANDLER = DisableAbleMessageHandler(
 
 
 dispatcher.add_handler(WEEBIFY_HANDLER)
+dispatcher.add_handler(BUBBLE_HANDLER)
 dispatcher.add_handler(SHRUG_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(ABUSE_HANDLER)
