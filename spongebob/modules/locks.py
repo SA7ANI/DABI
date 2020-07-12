@@ -42,6 +42,7 @@ LOCK_TYPES = {
     "egame": Filters.dice,
     "rtl": "rtl",
     "button": "button",
+    "inline": "inline",
 }
 
 
@@ -92,19 +93,6 @@ UNLOCK_CHAT_RESTRICTION = {
 PERM_GROUP = 1
 REST_GROUP = 2
 
-"""
-class CustomCommandHandler(tg.CommandHandler):
-	def __init__(self, command, callback, **kwargs):
-		super().__init__(command, callback, **kwargs)
-
-	def check_update(self, update):
-		return super().check_update(update) and not (
-				sql.is_restr_locked(update.effective_chat.id, 'messages') and not is_user_admin(update.effective_chat,
-																								update.effective_user.id))
-
-
-tg.CommandHandler = CustomCommandHandler"""
-
 
 # NOT ASYNC
 def restr_members(
@@ -147,7 +135,10 @@ def unrestr_members(
 @run_async
 def locktypes(update, context):
     update.effective_message.reply_text(
-        "\n - ".join(["Locks: "] + list(LOCK_TYPES) + list(LOCK_CHAT_RESTRICTION))
+        "\n × ".join(
+            ["Locks available: "]
+            + sorted(list(LOCK_TYPES) + list(LOCK_CHAT_RESTRICTION))
+        )
     )
 
 
@@ -401,6 +392,17 @@ def del_lockables(update, context):
                         else:
                             LOGGER.exception("ERROR in lockables")
             continue
+        if lockable == "inline":
+            if sql.is_locked(chat.id, lockable) and can_delete(chat, context.bot.id):
+                if message and message.via_bot:
+                    try:
+                        message.delete()
+                    except BadRequest as excp:
+                        if excp.message == "Message to delete not found":
+                            pass
+                        else:
+                            LOGGER.exception("ERROR in lockables")
+            continue
         if (
             filter(update)
             and sql.is_locked(chat.id, lockable)
@@ -459,6 +461,7 @@ def build_lock_message(chat_id):
             locklist.append("rtl = `{}`".format(locks.rtl))
             locklist.append("button = `{}`".format(locks.button))
             locklist.append("egame = `{}`".format(locks.egame))
+            locklist.append("inline = `{}`".format(locks.inline))
     permissions = dispatcher.bot.get_chat(chat_id).permissions
     permslist.append("messages = `{}`".format(permissions.can_send_messages))
     permslist.append("media = `{}`".format(permissions.can_send_media_messages))
