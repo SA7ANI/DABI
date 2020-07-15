@@ -395,6 +395,7 @@ GBUN = (
     "Don't misuse your powers noob...",
     "Nah, he looks innocent...",
     "Get ready for global bun hammer!",
+    "Marna Hai Kya BSDK",
 )
 
 DECIDE = ("Yes.", "NoU.", "Maybe.", "No.")

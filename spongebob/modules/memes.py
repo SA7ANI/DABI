@@ -258,14 +258,19 @@ def recite(update, context):
 @run_async
 @typing_action
 def gbun(update, context):
-    user = update.effective_user
-    chat = update.effective_chat
-
-    if update.effective_message.chat.type == "private":
-        return
-    if int(user.id) in SUDO_USERS or int(user.id) in SUPPORT_USERS:
-        context.bot.sendMessage(chat.id, (random.choice(fun.GBUN)))
-
+#    user = update.effective_user
+#    chat = update.effective_chat
+#
+#    if update.effective_message.chat.type == "private":
+#        return
+#    if int(user.id) in SUDO_USERS or int(user.id) in SUPPORT_USERS:
+#        context.bot.sendMessage(chat.id, (random.choice(fun.GBUN)))
+    reply_text = (
+        update.effective_message.reply_to_message.reply_text
+        if update.effective_message.reply_to_message
+        else update.effective_message.reply_text
+    )
+    reply_text(random.choice(fun.GBUN))
 
 @run_async
 @typing_action
@@ -562,7 +567,9 @@ RUNS_HANDLER = DisableAbleCommandHandler("runs", runs)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap, pass_args=True)
 PUNCH_HANDLER = DisableAbleCommandHandler("punch", punch, pass_args=True)
 HUG_HANDLER = DisableAbleCommandHandler("warm", hug, pass_args=True)
-GBUN_HANDLER = CommandHandler("gbun", gbun)
+GBUN_HANDLER = CommandHandler(
+    "gbun", gbun, pass_args=True, filters=CustomFilters.sudo_filter
+)
 TABLE_HANDLER = DisableAbleCommandHandler("table", table)
 CRI_HANDLER = DisableAbleCommandHandler("cri", cri)
 PASTA_HANDLER = DisableAbleCommandHandler("pasta", copypasta)
