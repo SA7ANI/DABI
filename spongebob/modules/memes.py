@@ -4,12 +4,12 @@ import requests as r
 from telegram import ParseMode, TelegramError, MAX_MESSAGE_LENGTH
 from telegram.ext import Filters, CommandHandler, run_async
 from telegram.error import BadRequest
-from telegram.utils.helpers import mention_html, escape_markdown
+from telegram.utils.helpers import escape_markdown
 
 from spongebob.modules.helper_funcs.extraction import extract_user
 from spongebob.modules.helper_funcs.filters import CustomFilters
 from spongebob.modules.helper_funcs.alternate import typing_action
-from spongebob import dispatcher, SUDO_USERS, SUPPORT_USERS, LOGGER
+from spongebob import dispatcher, LOGGER
 from spongebob.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
 
 import spongebob.modules.helper_funcs.fun_strings as fun
