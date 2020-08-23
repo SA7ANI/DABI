@@ -442,11 +442,9 @@ def stickerid(update, context):
 __help__ = """
 Kanging Stickers made easy with stickers module!
 
- • /stickerid: Reply to a sticker to me to tell you its file ID.
- • /getsticker: Reply to a sticker to me to upload its raw PNG file.
- • /kang: Reply to a sticker to add it to your pack.
- • /bang <text>: Turn a text into sticker.
- You'll get a random colour from rainbow
+× /stickerid: Reply to a sticker to me to tell you its file ID.
+× /getsticker: Reply to a sticker to me to upload its raw PNG file.
+× /kang: Reply to a sticker to add it to your pack.
 """
 
 __mod_name__ = "Stickers"
