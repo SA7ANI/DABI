@@ -486,6 +486,46 @@ def stats(update, context):
         "Current stats:\n" + "\n".join([mod.__stats__() for mod in STATS])
     )
 
+    
+import asyncio
+import os
+import requests
+from bs4 import BeautifulSoup
+from datetime import datetime
+#from google_images_download import google_images_download
+import sys
+import shutil
+from re import findall
+import html2text
+
+@register(pattern="^/google (.*)") 
+async def _(event):
+    if event.fwd_from:
+        return
+    approved_userss = approved_users.find({})
+    for ch in approved_userss: 
+        iid = ch['id']
+        userss = ch['user']
+    if event.is_group:
+     if (await is_register_admin(event.input_chat, event.message.sender_id)):
+       pass
+     elif event.chat_id == iid and event.from_id == userss:  
+       pass
+     else:
+       return
+    # SHOW_DESCRIPTION = False
+    input_str = event.pattern_match.group(1) # + " -inurl:(htm|html|php|pls|txt) intitle:index.of \"last modified\" (mkv|mp4|avi|epub|pdf|mp3)"
+    input_url = "https://bots.shrimadhavuk.me/search/?q={}".format(input_str)
+    headers = {"USER-AGENT": "UniBorg"}
+    response = requests.get(input_url, headers=headers).json()
+    output_str = " "
+    for result in response["results"]:
+        text = result.get("title")
+        url = result.get("url")
+        description = result.get("description")
+        last = html2text.html2text(description)
+        output_str += "[{}]({})\n{}\n".format(text, url, last)       
+    await event.reply("{}".format(output_str), link_preview=False, parse_mode='Markdown')
 
 # /ip is for private use
 __help__ = """
@@ -500,6 +540,7 @@ An "odds and ends" module for small, simple commands which don't really fit anyw
  • /reverse : Reverse searches image or stickers on google.
  • /gdpr: Deletes your information from the bot's database. Private chats only.
  • /markdownhelp: Quick summary of how markdown works in telegram - can only be called in private chats.
+ • /google: Its a Google search 
 """
 
 __mod_name__ = "Misc"
