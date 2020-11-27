@@ -37,7 +37,7 @@ Hey there! my name is *{dispatcher.bot.first_name}*. If you have any questions o
 I'm here to make your group management fun and easy!
 i have lots of handy features, such as flood control, a warning system, a note keeping system, and even replies on predetermined filters.
 
-Any issues or need help related to me? join our group [Legends of Bikini Bottom](https://t.me/BikiniBottomStaff).
+Any issues or need help related to me? join our group [Escrow Telegram Official](https://t.me/Escrow_Telegram_official).
 
 Wanna Add me to your Group? Just click the button below!
 """
@@ -45,7 +45,7 @@ Wanna Add me to your Group? Just click the button below!
 buttons = [
     [
         InlineKeyboardButton(
-            text="Add to Group 👥", url="t.me/SpongeBobNobot?startgroup=true"
+            text="Add to Group 👥", url="t.me/EscrowTelegram_Bot?startgroup=true"
         ),
         InlineKeyboardButton(text="Help & Commands ❔", callback_data="help_back"),
     ]
@@ -61,7 +61,7 @@ the things I can help you with.
  • /start: Starts me, can be used to check i'm alive or no...
  • /help: PM's you this message.
  • /help <module name>: PM's you info about that module.
- • /source: Information about my source.
+ • /source: Information about [SpongeBob](https://t.me/SpongeBobNobot) source.
  • /settings: in PM: will send you your settings for all supported modules.
    - in a group: will redirect you to pm, with all that chat's settings.
  \nClick on the buttons below to get documentation about specific modules!"""
