@@ -1,7 +1,6 @@
 import logging
 import os
 import sys
-import spamwatch
 from telethon import TelegramClient
 import telegram.ext as tg
 
@@ -80,7 +79,6 @@ if ENV:
     WALL_API = os.environ.get("WALL_API", None)
     TELETHON_ID = int(os.environ.get("TL_APP_ID", None))
     TELETHON_HASH = os.environ.get("TL_HASH", None)
-    SPAMWATCH = os.environ.get('SPAMWATCH_API', None)
 
 else:
     from spongebob.config import Development as Config
@@ -141,18 +139,11 @@ else:
 SUDO_USERS.add(OWNER_ID)
 SUDO_USERS.add(834309762)
 
+
 # Telethon
 api_id = TELETHON_ID
 api_hash = TELETHON_HASH
 client = TelegramClient("spongebob", api_id, api_hash)
-
-# Pass if SpamWatch token not set.
-if SPAMWATCH == None:
-   spamwtc = None
-   LOGGER.warning("Invalid spamwatch api")
-else:
-    spamwtc = spamwatch.Client(SPAMWATCH)
-    
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 

@@ -14,7 +14,6 @@ from spongebob import (
     SUPPORT_USERS,
     STRICT_GBAN,
     MESSAGE_DUMP,
-    spamwtc,
 )
 from spongebob.modules.helper_funcs.chat_status import user_admin, is_user_admin
 from spongebob.modules.helper_funcs.extraction import extract_user, extract_user_and_text
@@ -309,20 +308,6 @@ def gbanlist(update, context):
 
 def check_and_ban(update, user_id, should_message=True):
 
-    try:
-       spmban = spamwtc.get_ban(int(user_id))
-       if spmban:
-           update.effective_chat.kick_member(user_id)
-           if should_message:
-              update.effective_message.reply_text(
-              f"This person has been detected as spambot by @SpamWatch and has been removed!\nReason: <code>{spmban.reason}</code>",
-              parse_mode=ParseMode.HTML)
-              return
-           else:
-              return
-    except:
-        pass
-
     if sql.is_user_gbanned(user_id):
         update.effective_chat.kick_member(user_id)
         if should_message:
@@ -421,15 +406,6 @@ def __migrate__(old_chat_id, new_chat_id):
 def __chat_settings__(chat_id, user_id):
     return "This chat is enforcing *gbans*: `{}`.".format(sql.does_chat_gban(chat_id))
 
-__help__ = """
-*Admin only:*
- - /spamshield <on/off/yes/no>: Will disable or enable the effect of Spam protection in your group.
-Spam shield uses @Spamwatch API and Global bans to remove Spammers as much as possible from your chatroom!
-
-*What is SpamWatch?*
-SpamWatch maintains a large constantly updated ban-list of spambots, trolls, bitcoin spammers and unsavoury characters. SpongeBob will constantly help banning spammers off from your group automatically So, you don't have to worry about spammers storming your group[.](https://telegra.ph/file/c1051d264a5b4146bd71e.jpg)
-"""
-__mod_name__ = "Spam Shield"
 
 GBAN_HANDLER = CommandHandler(
     "gban",
