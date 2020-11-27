@@ -430,11 +430,14 @@ def rmemes(update, context):
     chat = update.effective_chat
 
     SUBREDS = [
+        "brazzers",
+        "pornhub",
+        "savitabhabhi",
+        "telegrammeme",
         "blursedimages",
         "BikiniBottomTwitter",
         "meirl",
         "dankmemes",
-        "AdviceAnimals",
         "memes",
         "meme",
         "memes_of_the_dank",
