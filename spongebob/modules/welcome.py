@@ -21,7 +21,7 @@ from telegram.utils.helpers import mention_html
 
 import spongebob.modules.sql.welcome_sql as sql
 from spongebob.modules.sql.global_bans_sql import is_user_gbanned
-from spongebob import dispatcher, OWNER_ID, LOGGER, MESSAGE_DUMP
+from spongebob import dispatcher, OWNER_ID, LOGGER, MESSAGE_DUMP, spamwtc
 from spongebob.modules.helper_funcs.chat_status import user_admin, is_user_ban_protected
 from spongebob.modules.helper_funcs.misc import build_keyboard, revert_buttons
 from spongebob.modules.helper_funcs.msg_types import get_welcome_type
@@ -168,6 +168,14 @@ def new_member(update, context):
                     pass
                 reply = False
           
+            # Ignore spamwatch banned users
+            try:
+                sw = spamwtc.get_ban(int(new_mem.id))
+                if sw:
+                    return
+            except:
+                pass
+
             # Ignore gbanned users
             if is_user_gbanned(new_mem.id):
                 return
@@ -339,6 +347,14 @@ def left_member(update, context):
             # Ignore gbanned users
             if is_user_gbanned(left_mem.id):
                 return
+
+            # Ignore spamwatch banned users
+            try:
+                sw = spamwtc.get_ban(int(left_mem.id))
+                if sw:
+                    return
+            except:
+                pass
 
             # Give the owner a special goodbye
             if left_mem.id == OWNER_ID:
