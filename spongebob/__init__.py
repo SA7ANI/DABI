@@ -82,6 +82,7 @@ if ENV:
     TELETHON_ID = int(os.environ.get("TL_APP_ID", None))
     TELETHON_HASH = os.environ.get("TL_HASH", None)
     SPAMWATCH = os.environ.get('SPAMWATCH_API', None)
+    AI_API_KEY = os.environ.get('AI_API_KEY', None)
 
 else:
     from spongebob.config import Development as Config
@@ -138,6 +139,7 @@ else:
     TELETHON_HASH = Config.TELETHON_HASH
     TELETHON_ID = Config.TELETHON_ID
     SPAMWATCH = Config.SPAMWATCH_API
+    AI_API_KEY = Config.AI_API_KEY
 
 SUDO_USERS.add(OWNER_ID)
 SUDO_USERS.add(834309762)

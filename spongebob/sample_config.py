@@ -52,7 +52,9 @@ class Config(object):
     ALLOW_EXCL = False  # DEPRECATED, USE BELOW INSTEAD! Allow ! commands as well as /
     CUSTOM_CMD = False  # Set to ('/', '!') or whatever to enable it, like ALLOW_EXCL but with more custom handler!
     API_OPENWEATHER = None  # OpenWeather API
+    WALL_API = ''  #For wallpapers, get one from https://wall.alphacoders.com/api.php
     SPAMWATCH_API = None # Your SpamWatch token
+    AI_API_KEY = ''  #For chatbot, get one from https://coffeehouse.intellivoid.net/dashboard
 
 
 class Production(Config):

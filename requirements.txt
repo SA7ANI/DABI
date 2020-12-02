@@ -28,3 +28,4 @@ bleach
 markdown2>=2.3.9
 alphabet_detector
 tgcrypto
+coffeehouse
