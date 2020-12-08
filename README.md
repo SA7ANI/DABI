@@ -1,20 +1,20 @@
-# SPONGEBOB
+# KYLIE
 
-[![DeepSource](https://static.deepsource.io/deepsource-badge-light.svg)](https://deepsource.io/gh/PatrickDeadStar/SpongeBob/?ref=repository-badge)
+[![DeepSource](https://static.deepsource.io/deepsource-badge-light.svg)](https://deepsource.io/gh/PatrickDeadStar/MissKylieBot/?ref=repository-badge)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f6f68501ebd2481f995b8f2240048767)](https://app.codacy.com/manual/PatrickDeadStar/SpongeBob?utm_source=github.com&utm_medium=referral&utm_content=PatrickDeadStar/SpongeBob&utm_campaign=Badge_Grade_Dashboard)
-[![DeepSource](https://deepsource.io/gh/PatrickDeadStar/SpongeBob.svg/?label=resolved+issues&show_trend=true)](https://deepsource.io/gh/PatrickDeadStar/SpongeBob/?ref=repository-badge)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f6f68501ebd2481f995b8f2240048767)](https://app.codacy.com/manual/PatrickDeadStar/MissKylieBot?utm_source=github.com&utm_medium=referral&utm_content=PatrickDeadStar/MissKylieBot&utm_campaign=Badge_Grade_Dashboard)
+[![DeepSource](https://deepsource.io/gh/PatrickDeadStar/MissKylieBot.svg/?label=resolved+issues&show_trend=true)](https://deepsource.io/gh/PatrickDeadStar/MissKylieBot/?ref=repository-badge)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-![logo](https://telegra.ph/file/520390414f9d62b2e5c65.jpg)
+![logo](https://telegra.ph/file/ac598dadaa092c64821df.jpg)
 
 A modular telegram Python bot running on python3 with an sqlalchemy database.
 
 Originally a simple group management bot with multiple admin features, it has evolved, becoming extremely modular and 
 simple to use. Note that this project uses well-known Telegram-bot of it's time @BanhammerMarie_bot from Paul Larson as it's base.
 
-Can be found on telegram as [SpongeBob](https://t.me/SpongeBobNobot).
+Can be found on telegram as [KYLIE](https://t.me/MissKylieBot).
 
 Sponge Bob is based on [Skylee](https://github.com/starry69/skyleebot)
 
