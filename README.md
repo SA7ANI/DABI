@@ -2,7 +2,6 @@
 
 [![DeepSource](https://static.deepsource.io/deepsource-badge-light.svg)](https://deepsource.io/gh/PatrickDeadStar/MissKylieBot/?ref=repository-badge)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f6f68501ebd2481f995b8f2240048767)](https://app.codacy.com/manual/PatrickDeadStar/MissKylieBot?utm_source=github.com&utm_medium=referral&utm_content=PatrickDeadStar/MissKylieBot&utm_campaign=Badge_Grade_Dashboard)
 [![DeepSource](https://deepsource.io/gh/PatrickDeadStar/MissKylieBot.svg/?label=resolved+issues&show_trend=true)](https://deepsource.io/gh/PatrickDeadStar/MissKylieBot/?ref=repository-badge)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
@@ -45,7 +44,7 @@ And much more that we couldn't list it here!
 
 Once you've setup your database and your configuration (see below) is complete, simply run:
 
-`python3 -m spongebob`
+`python3 -m kylie`
 
 
 ## Setting up the bot (Read this before trying to use!)
@@ -58,7 +57,7 @@ This is because markdown parsing is done by iterating through a dict, which are 
 There are two possible ways of configuring your bot: a config.py file, or ENV variables.
 
 The prefered version is to use a `config.py` file, as it makes it easier to see all your settings grouped together.
-This file should be placed in your `spongebob` folder, alongside the `__main__.py` file . 
+This file should be placed in your `kylie` folder, alongside the `__main__.py` file . 
 This is where your bot token will be loaded from, as well as your database URI (if you're using a database), and most of 
 your other settings.
 
@@ -67,7 +66,7 @@ defaults set in the sample_config, hence making it easier to upgrade.
 
 An example `config.py` file could be:
 ```
-from spongebob.sample_config import Config
+from kylie.sample_config import Config
 
 
 class Development(Config):
@@ -153,7 +152,7 @@ All that is needed is that your .py file be in the modules folder.
 
 To add commands, make sure to import the dispatcher via
 
-`from spongebob import dispatcher`.
+`from kylie import dispatcher`.
 
 You can then add commands using the usual
 
