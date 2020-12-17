@@ -1,5 +1,6 @@
 # SPIKE SPIEGEL
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c58dfef7abda42adbce972f547e3e5a7)](https://app.codacy.com/gh/PatrickDeadStar/SpikeNoBot?utm_source=github.com&utm_medium=referral&utm_content=PatrickDeadStar/SpikeNoBot&utm_campaign=Badge_Grade)
 [![DeepSource](https://static.deepsource.io/deepsource-badge-light.svg)](https://deepsource.io/gh/PatrickDeadStar/SpikeNoBot/?ref=repository-badge)
 
 
