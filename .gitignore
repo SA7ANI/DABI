@@ -1,7 +1,7 @@
-spongebob/config.py
+spike/config.py
 logfile
-spongebob.session
-spongebob.session-journal
+spike.session
+spike.session-journal
 *.pyc
 .idea/
 .project
@@ -14,5 +14,5 @@ sticker.png
 kangsticker.png
 kangsticker.tgs
 kangsticker
-spongebob.mp3
+spike.mp3
 gpic.png
