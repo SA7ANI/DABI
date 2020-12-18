@@ -1,1 +1,1 @@
-worker: python3 -m spongebob
+worker: python3 -m hinata

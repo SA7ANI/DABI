@@ -1,7 +1,7 @@
-spongebob/config.py
+hinata/config.py
 logfile
-spongebob.session
-spongebob.session-journal
+hinata.session
+hinata.session-journal
 *.pyc
 .idea/
 .project
@@ -14,5 +14,5 @@ sticker.png
 kangsticker.png
 kangsticker.tgs
 kangsticker
-spongebob.mp3
+hinata.mp3
 gpic.png

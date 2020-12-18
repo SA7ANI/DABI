@@ -1,20 +1,20 @@
-# SPONGEBOB
+# HINATA HYŪGA
 
-[![DeepSource](https://static.deepsource.io/deepsource-badge-light.svg)](https://deepsource.io/gh/PatrickDeadStar/SpongeBob/?ref=repository-badge)
+[![DeepSource](https://static.deepsource.io/deepsource-badge-light.svg)](https://deepsource.io/gh/PatrickDeadStar/HinataHyuga/?ref=repository-badge)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f6f68501ebd2481f995b8f2240048767)](https://app.codacy.com/manual/PatrickDeadStar/SpongeBob?utm_source=github.com&utm_medium=referral&utm_content=PatrickDeadStar/SpongeBob&utm_campaign=Badge_Grade_Dashboard)
-[![DeepSource](https://deepsource.io/gh/PatrickDeadStar/SpongeBob.svg/?label=resolved+issues&show_trend=true)](https://deepsource.io/gh/PatrickDeadStar/SpongeBob/?ref=repository-badge)
+
+[![DeepSource](https://deepsource.io/gh/PatrickDeadStar/HinataHyuga.svg/?label=resolved+issues&show_trend=true)](https://deepsource.io/gh/PatrickDeadStar/HinataHyuga/?ref=repository-badge)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-![logo](https://telegra.ph/file/520390414f9d62b2e5c65.jpg)
+![logo](https://telegra.ph/file/15690e04b385a25a62b0b.jpg)
 
 A modular telegram Python bot running on python3 with an sqlalchemy database.
 
 Originally a simple group management bot with multiple admin features, it has evolved, becoming extremely modular and 
 simple to use. Note that this project uses well-known Telegram-bot of it's time @BanhammerMarie_bot from Paul Larson as it's base.
 
-Can be found on telegram as [SpongeBob](https://t.me/SpongeBobNobot).
+Can be found on telegram as [Hinata](https://t.me/HyugaHinataBot).
 
 Sponge Bob is based on [Skylee](https://github.com/starry69/skyleebot)
 
@@ -45,7 +45,7 @@ And much more that we couldn't list it here!
 
 Once you've setup your database and your configuration (see below) is complete, simply run:
 
-`python3 -m spongebob`
+`python3 -m hinata`
 
 
 ## Setting up the bot (Read this before trying to use!)
@@ -58,7 +58,7 @@ This is because markdown parsing is done by iterating through a dict, which are 
 There are two possible ways of configuring your bot: a config.py file, or ENV variables.
 
 The prefered version is to use a `config.py` file, as it makes it easier to see all your settings grouped together.
-This file should be placed in your `spongebob` folder, alongside the `__main__.py` file . 
+This file should be placed in your `hinata` folder, alongside the `__main__.py` file . 
 This is where your bot token will be loaded from, as well as your database URI (if you're using a database), and most of 
 your other settings.
 
@@ -67,7 +67,7 @@ defaults set in the sample_config, hence making it easier to upgrade.
 
 An example `config.py` file could be:
 ```
-from spongebob.sample_config import Config
+from hinata.sample_config import Config
 
 
 class Development(Config):
@@ -153,7 +153,7 @@ All that is needed is that your .py file be in the modules folder.
 
 To add commands, make sure to import the dispatcher via
 
-`from spongebob import dispatcher`.
+`from hinata import dispatcher`.
 
 You can then add commands using the usual
 
