@@ -200,7 +200,7 @@ def new_member(update, context):
 
                 context.bot.send_message(
                     MESSAGE_DUMP,
-                    "Sponge Bob have been added to <pre>{}</pre> with ID: \n<pre>{}</pre>".format(
+                    "Hinata have been added to <pre>{}</pre> with ID: \n<pre>{}</pre>".format(
                         chat.title, chat.id
                     ),
                     parse_mode=ParseMode.HTML,

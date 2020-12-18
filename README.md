@@ -16,7 +16,7 @@ simple to use. Note that this project uses well-known Telegram-bot of it's time 
 
 Can be found on telegram as [Hinata](https://t.me/HyugaHinataBot).
 
-Sponge Bob is based on [Skylee](https://github.com/starry69/skyleebot)
+Hinata is based on [Skylee](https://github.com/starry69/skyleebot)
 
 ## Special Credits
 ------------------
