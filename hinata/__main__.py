@@ -36,10 +36,7 @@ from hinata.modules.helper_funcs.alternate import typing_action
 PM_START_TEXT = f"""
 Hey there! my name is *{dispatcher.bot.first_name}*. If you have any questions on how to use me, Click Help button.
 
-I'm here to make your group management fun and easy!
-i have lots of handy features, such as flood control, a warning system, a note keeping system, and even replies on predetermined filters.
-
-Any issues or need help related to me? join our group [Legends of Bikini Bottom](https://t.me/TheKonoha11).
+Any issues or need help related to me? join our group [Konoha 11](https://t.me/TheKonoha11).
 
 Wanna Add me to your Group? Just click the button below!
 """
@@ -166,7 +163,7 @@ def start(update, context):
 
         else:
             update.effective_message.reply_photo(
-                "https://telegra.ph/file/15690e04b385a25a62b0b.jpg",
+                "https://telegra.ph/file/632222ec52f4ad375902f.jpg",
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
