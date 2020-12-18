@@ -1,9 +1,12 @@
+#### Bot lib ####
+python-telegram-bot==12.8
+telethon
+pyrogram
+#################
 future
 emoji
 requests
-telethon
 sqlalchemy
-python-telegram-bot==12.8
 psycopg2-binary
 pythonping
 feedparser
@@ -24,3 +27,4 @@ spamwatch
 bleach
 markdown2>=2.3.9
 alphabet_detector
+tgcrypto

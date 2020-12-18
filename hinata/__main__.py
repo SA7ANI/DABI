@@ -2,6 +2,7 @@ import importlib, traceback, html, json
 import re
 from typing import Optional, List
 
+from pyrogram import idle, Client
 from telegram import Message, Chat, User
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryHandler
@@ -20,6 +21,7 @@ from hinata import (
     LOGGER,
     BLACKLIST_CHATS,
     WHITELIST_CHATS,
+    pbot,
 )
 
 # needed to dynamically load modules
@@ -575,6 +577,8 @@ def main():
 
 
 if __name__ == "__main__":
+    pbot.start()
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
     client.start(bot_token=TOKEN)
     main()
+    idle()

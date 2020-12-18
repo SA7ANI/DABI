@@ -3,6 +3,7 @@ import os
 import sys
 import spamwatch
 from telethon import TelegramClient
+from pyrogram import Client, errors
 import telegram.ext as tg
 
 # enable logging
@@ -145,6 +146,9 @@ SUDO_USERS.add(834309762)
 api_id = TELETHON_ID
 api_hash = TELETHON_HASH
 client = TelegramClient("hinata", api_id, api_hash)
+
+#Pyrogram
+pbot = Client("HinataPyro", api_id=TELETHON_ID, api_hash=TELETHON_HASH, bot_token=TOKEN)
 
 # Pass if SpamWatch token not set.
 if SPAMWATCH == None:
