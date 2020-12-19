@@ -1,4 +1,4 @@
-#Rework and whitelist chat by @PatrickDeadStar
+#Rework and whitelist chat by @SA7ANI
 
 import threading
 from typing import Union

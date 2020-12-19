@@ -1,9 +1,9 @@
 # HINATA HYŪGA
 
-[![DeepSource](https://static.deepsource.io/deepsource-badge-light.svg)](https://deepsource.io/gh/PatrickDeadStar/HinataHyuga/?ref=repository-badge)
+[![DeepSource](https://static.deepsource.io/deepsource-badge-light.svg)](https://deepsource.io/gh/SA7ANI/HinataHyuga/?ref=repository-badge)
 
 
-[![DeepSource](https://deepsource.io/gh/PatrickDeadStar/HinataHyuga.svg/?label=resolved+issues&show_trend=true)](https://deepsource.io/gh/PatrickDeadStar/HinataHyuga/?ref=repository-badge)
+[![DeepSource](https://deepsource.io/gh/SA7ANI/HinataHyuga.svg/?label=resolved+issues&show_trend=true)](https://deepsource.io/gh/SA7ANI/HinataHyuga/?ref=repository-badge)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
@@ -72,7 +72,7 @@ from hinata.sample_config import Config
 
 class Development(Config):
     OWNER_ID =  834309762 # my telegram ID
-    OWNER_USERNAME = "patrickdeadstar"  # my telegram username
+    OWNER_USERNAME = "SA7ANI"  # my telegram username
     API_KEY = "your bot api key"  # my api key, as provided by the botfather
     SQLALCHEMY_DATABASE_URI = 'postgresql://username:password@localhost:5432/database'  # sample db credentials
     MESSAGE_DUMP = '-1234567890' # some group chat that your bot is a member of

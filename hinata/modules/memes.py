@@ -49,7 +49,7 @@ def slap(update, context):
     if user_id:
         slapped_user = context.bot.get_chat(user_id)
         user1 = curr_user
-        if slapped_user.username == "PatrickDeadStar":
+        if slapped_user.username == "SA7ANI":
             msg.reply_text("I'm not doing that!")
             return
         if slapped_user.username:

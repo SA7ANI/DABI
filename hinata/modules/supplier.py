@@ -1,5 +1,5 @@
 #Stɑrry Shivɑm // This file some part of Nekobot
-#Rework and whitelist chat by @PatrickDeadStar
+#Rework and whitelist chat by @SA7ANI
 
 import nekos, html
 import hinata.modules.sql.supplier_sql as sql
