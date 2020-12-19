@@ -363,7 +363,7 @@ If you want Hentai Supplier in your Private Group, ask [Here](https://t.me/TheKo
 """
 
 
-__mod_name__ = "♀️Hentai Supplier♀️"
+__mod_name__ = "♀️Hentai♀️"
 
 
 HSADD_HANDLER = CommandHandler("hsadd", hsadd, pass_args=True, filters=CustomFilters.sudo_filter)
