@@ -1,13 +1,11 @@
 # HINATA HYŪGA
 
+[![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/SA7ANI/HinataHyuga/?ref=repository-badge)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/223b5710f2fa41d58775094ee65b6957)](https://app.codacy.com/gh/SA7ANI/HinataHyuga?utm_source=github.com&utm_medium=referral&utm_content=SA7ANI/HinataHyuga&utm_campaign=Badge_Grade)
-[![DeepSource](https://static.deepsource.io/deepsource-badge-light.svg)](https://deepsource.io/gh/SA7ANI/HinataHyuga/?ref=repository-badge)
-
-[![DeepSource](https://deepsource.io/gh/SA7ANI/HinataHyuga.svg/?label=resolved+issues&show_trend=true)](https://deepsource.io/gh/SA7ANI/HinataHyuga/?ref=repository-badge)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-![logo](https://telegra.ph/file/632222ec52f4ad375902f.jpg)
+![Banner](https://telegra.ph/file/2c548ad69c6129e2f97c6.jpg)
 
 A modular telegram Python bot running on python3 with an sqlalchemy database.
 
@@ -18,28 +16,8 @@ Can be found on telegram as [Hinata](https://t.me/HyugaHinataBot).
 
 Hinata is based on [Skylee](https://github.com/starry69/skyleebot)
 
-## Special Credits
-------------------
-
-[@PaulSonOfLars](https://github.com/PaulSonOfLars) - For Marie and Rosecreator, inspiration to do many things.
-
-[@Starry69](https://github.com/starry69) - For Skylee Fork.
-
-[@Skittle](https://github.com/Skittle) - For Stickers module and memes in extras module.
-
-[@1mavarick1](https://github.com/1maverick1) - For Introducing Global Mutes and other things.
-
-[@AyraHikari](https://github.com/AyraHikari) - for Reworked Welcome, Fed v2, Weather modules and some other stuffs.
-
-[@RealAkito](https://github.com/RealAkito) - For Reworked Federation, reverse search and other things.
-
-[@MrYacha](https://github.com/MrYacha) - for Welcome Security base, Connections and other things.
-
-[@Skittle](https://github.com/Skittle) - For Memes and Sticker stuff.
-
-[@ATechnoHazard](https://github.com/ATechnoHazard) - For many stuffs.
-
-And much more that we couldn't list it here!
+<details>
+  <summary>Installation</summary>
 
 ## Starting the bot
 
@@ -133,7 +111,7 @@ Replace sqldbtype with whichever db youre using (eg postgres, mysql, sqllite, et
 repeat for your username, password, hostname (localhost?), port (5432?), and db name.
 
 ## Modules
-### Setting load order.
+### Setting load order
 
 The module load order can be changed via the `LOAD` and `NO_LOAD` configuration settings.
 These should both represent lists.
@@ -144,7 +122,7 @@ If `NO_LOAD` is not present, or is an empty list, all modules selected for loadi
 
 If a module is in both `LOAD` and `NO_LOAD`, the module will not be loaded - `NO_LOAD` takes priority.
 
-### Creating your own modules.
+### Creating your own modules
 
 Creating a module has been simplified as much as possible - but do not hesitate to suggest further simplification.
 
@@ -169,3 +147,23 @@ it is necessary to migrate it in the db.
 The `__stats__()` function is for retrieving module statistics, eg number of users, number of chats. This is accessed 
 through the `/stats` command, which is only available to the bot owner.
 
+</details>
+
+## Special Credits
+
+* [PaulSonOfLars](https://github.com/PaulSonOfLars) - For Marie and Rosecreator, inspiration to do many things.
+* [Starry69](https://github.com/starry69) - For Skylee Fork.
+* [Skittle](https://github.com/Skittle) - For Stickers module and memes in extras module.
+* [1mavarick1](https://github.com/1maverick1) - For Introducing Global Mutes and other things.
+* [AyraHikari](https://github.com/AyraHikari) - for Reworked Welcome, Fed v2, Weather modules and some other stuffs.
+* [RealAkito](https://github.com/RealAkito) - For Reworked Federation, reverse search and other things.
+* [MrYacha](https://github.com/MrYacha) - for Welcome Security base, Connections and other things.
+* [Skittle](https://github.com/Skittle) - For Memes and Sticker stuff.
+* [ATechnoHazard](https://github.com/ATechnoHazard) - For many stuffs.
+
+And to all other [contributors](https://github.com/SA7ANI/HinataHyuga/graphs/contributors) not listed here.
+
+### DeepSource Stats
+
+[![DeepSource](https://deepsource.io/gh/SA7ANI/HinataHyuga.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/SA7ANI/HinataHyuga/?ref=repository-badge)
+[![DeepSource](https://deepsource.io/gh/SA7ANI/HinataHyuga.svg/?label=resolved+issues&show_trend=true)](https://deepsource.io/gh/SA7ANI/HinataHyuga/?ref=repository-badge)
