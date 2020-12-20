@@ -1,10 +1,8 @@
 #Rework and whitelist chat by @SA7ANI
 
 import threading
-from typing import Union
-from sqlalchemy import Column, String, Boolean, UnicodeText, Integer, BigInteger
+from sqlalchemy import Column, String, UnicodeText, Integer, BigInteger
 
-from hinata.modules.helper_funcs.msg_types import Types
 from hinata.modules.sql import SESSION, BASE
 
 class AllowedChat(BASE):

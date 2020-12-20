@@ -1,15 +1,15 @@
 #Stɑrry Shivɑm // This file some part of Nekobot
 #Rework and whitelist chat by @SA7ANI
 
-import nekos, html
+import nekos
 import hinata.modules.sql.supplier_sql as sql
 from functools import wraps
 from telegram import ParseMode
 from hinata.modules.disable import DisableAbleCommandHandler
 from hinata.modules.helper_funcs.filters import CustomFilters
-from hinata import dispatcher, MESSAGE_DUMP, SUDO_USERS
+from hinata import dispatcher, MESSAGE_DUMP
 from telegram.ext.dispatcher import run_async
-from telegram.ext import Filters, CommandHandler
+from telegram.ext import CommandHandler
 from telegram.utils.helpers import mention_html
 
 
@@ -17,7 +17,6 @@ def hentai_supplier(func):
     @wraps(func)
     def allowed_chat(update, context, *args, **kwargs):
         chat = update.effective_chat
-        user = update.effective_user
         isAllowed = sql.isAdded(str(chat.id))
         if isAllowed or chat.type == "private":
             sql.addedChat(str(chat.id))

@@ -2,7 +2,6 @@
 
 [![DeepSource](https://static.deepsource.io/deepsource-badge-light.svg)](https://deepsource.io/gh/SA7ANI/HinataHyuga/?ref=repository-badge)
 
-
 [![DeepSource](https://deepsource.io/gh/SA7ANI/HinataHyuga.svg/?label=resolved+issues&show_trend=true)](https://deepsource.io/gh/SA7ANI/HinataHyuga/?ref=repository-badge)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
@@ -46,7 +45,6 @@ And much more that we couldn't list it here!
 Once you've setup your database and your configuration (see below) is complete, simply run:
 
 `python3 -m hinata`
-
 
 ## Setting up the bot (Read this before trying to use!)
 
