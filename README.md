@@ -1,5 +1,6 @@
 # HINATA HYŪGA
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/223b5710f2fa41d58775094ee65b6957)](https://app.codacy.com/gh/SA7ANI/HinataHyuga?utm_source=github.com&utm_medium=referral&utm_content=SA7ANI/HinataHyuga&utm_campaign=Badge_Grade)
 [![DeepSource](https://static.deepsource.io/deepsource-badge-light.svg)](https://deepsource.io/gh/SA7ANI/HinataHyuga/?ref=repository-badge)
 
 [![DeepSource](https://deepsource.io/gh/SA7ANI/HinataHyuga.svg/?label=resolved+issues&show_trend=true)](https://deepsource.io/gh/SA7ANI/HinataHyuga/?ref=repository-badge)
