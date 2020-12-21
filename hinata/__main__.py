@@ -37,6 +37,7 @@ PM_START_TEXT = f"""
 Hey there! my name is *{dispatcher.bot.first_name}*. If you have any questions on how to use me, Click Help button.
 
 Any issues or need help related to me? join our group [Konoha 11](https://t.me/TheKonoha11).
+Our Update Channel [PatrickUniverse](https://t.me/PatrickUniverse).
 
 Wanna Add me to your Group? Just click the button below!
 """
