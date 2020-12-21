@@ -1,6 +1,7 @@
 import html
 import random, re
 import wikipedia
+
 from typing import Optional, List
 from requests import get
 
@@ -37,163 +38,6 @@ from hinata.modules.disable import DisableAbleCommandHandler
 from hinata.modules.helper_funcs.extraction import extract_user
 from hinata.modules.helper_funcs.filters import CustomFilters
 from hinata.modules.helper_funcs.alternate import typing_action, send_action
-
-
-@run_async
-@typing_action
-def get_id(update, context):
-    args = context.args
-    user_id = extract_user(update.effective_message, args)
-    if user_id:
-        if (
-            update.effective_message.reply_to_message
-            and update.effective_message.reply_to_message.forward_from
-        ):
-            user1 = update.effective_message.reply_to_message.from_user
-            user2 = update.effective_message.reply_to_message.forward_from
-            update.effective_message.reply_text(
-                "The original sender, {}, has an ID of `{}`.\nThe forwarder, {}, has an ID of `{}`.".format(
-                    escape_markdown(user2.first_name),
-                    user2.id,
-                    escape_markdown(user1.first_name),
-                    user1.id,
-                ),
-                parse_mode=ParseMode.MARKDOWN,
-            )
-        else:
-            user = context.bot.get_chat(user_id)
-            update.effective_message.reply_text(
-                "{}'s id is `{}`.".format(escape_markdown(user.first_name), user.id),
-                parse_mode=ParseMode.MARKDOWN,
-            )
-    else:
-        chat = update.effective_chat  # type: Optional[Chat]
-        if chat.type == "private":
-            update.effective_message.reply_text(
-                "Your id is `{}`.".format(chat.id), parse_mode=ParseMode.MARKDOWN
-            )
-
-        else:
-            update.effective_message.reply_text(
-                "This group's id is `{}`.".format(chat.id),
-                parse_mode=ParseMode.MARKDOWN,
-            )
-
-
-@run_async
-def info(update, context):
-    args = context.args
-    msg = update.effective_message  # type: Optional[Message]
-    user_id = extract_user(update.effective_message, args)
-    chat = update.effective_chat
-
-    if user_id:
-        user = context.bot.get_chat(user_id)
-
-    elif not msg.reply_to_message and not args:
-        user = msg.from_user
-
-    elif not msg.reply_to_message and (
-        not args
-        or (
-            len(args) >= 1
-            and not args[0].startswith("@")
-            and not args[0].isdigit()
-            and not msg.parse_entities([MessageEntity.TEXT_MENTION])
-        )
-    ):
-        msg.reply_text("I can't extract a user from this.")
-        return
-
-    else:
-        return
-
-    del_msg = msg.reply_text(
-        "Hold tight while I steal some data from <b>FBI Database</b>...",
-        parse_mode=ParseMode.HTML,
-    )
-
-    text = (
-        "<b>USER INFO</b>:"
-        "\n\nID: <code>{}</code>"
-        "\nFirst Name: {}".format(user.id, html.escape(user.first_name))
-    )
-
-    if user.last_name:
-        text += "\nLast Name: {}".format(html.escape(user.last_name))
-
-    if user.username:
-        text += "\nUsername: @{}".format(html.escape(user.username))
-
-    text += "\nPermanent user link: {}".format(mention_html(user.id, "link"))
-
-    text += "\nNumber of profile pics: {}".format(
-        context.bot.get_user_profile_photos(user.id).total_count
-    )
-
-    try:
-        spamban = spamwtc.get_ban(int(user.id))
-        if spamban:
-           format = 'Yes'
-        else:
-           format = 'No'
-        text += f"\nBanned in spamwatch: {format}"
-    except:
-        pass
-
-    if user.id == OWNER_ID:
-        text += "\n\nAye this guy is my owner.\nI would never do anything against him!"
-
-    elif user.id in SUDO_USERS:
-        text += (
-            "\n\nThis person is one of my sudo users! "
-            "Nearly as powerful as my owner - so watch it."
-        )
-
-    elif user.id in SUPPORT_USERS:
-        text += (
-            "\n\nThis person is one of my support users! "
-            "Not quite a sudo user, but can still gban you off the map."
-        )
-
-    elif user.id in WHITELIST_USERS:
-        text += (
-            "\n\nThis person has been whitelisted! "
-            "That means I'm not allowed to ban/kick them."
-        )
-
-    try:
-        memstatus = chat.get_member(user.id).status
-        if memstatus == "administrator" or memstatus == "creator":
-            result = context.bot.get_chat_member(chat.id, user.id)
-            if result.custom_title:
-                text += f"\n\nThis user has custom title <b>{result.custom_title}</b> in this chat."
-    except BadRequest:
-        pass
-
-    for mod in USER_INFO:
-        try:
-            mod_info = mod.__user_info__(user.id).strip()
-        except TypeError:
-            mod_info = mod.__user_info__(user.id, chat.id).strip()
-        if mod_info:
-            text += "\n\n" + mod_info
-
-    try:
-        profile = context.bot.get_user_profile_photos(user.id).photos[0][-1]
-        context.bot.sendChatAction(chat.id, "upload_photo")
-        context.bot.send_photo(
-            chat.id,
-            photo=profile,
-            caption=(text),
-            parse_mode=ParseMode.HTML,
-            disable_web_page_preview=True,
-        )
-    except IndexError:
-        context.bot.sendChatAction(chat.id, "typing")
-        msg.reply_text(text, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
-    finally:
-        del_msg.delete()
 
 
 @run_async
@@ -490,7 +334,6 @@ def staff_ids(update, context):
             caption="Here is the list of SUDO & SUPPORTS users.",
         )
 
-
 @run_async
 def stats(update, context):
     update.effective_message.reply_text(
@@ -502,8 +345,6 @@ def stats(update, context):
 __help__ = """
 An "odds and ends" module for small, simple commands which don't really fit anywhere
 
- • /id: Get the current group id. If used by replying to a message, gets that user's id.
- • /info: Get information about a user.
  • /wiki : Search wikipedia articles.
  • /rmeme: Sends random meme scraped from reddit.
  • /ud <query> : Search stuffs in urban dictionary.
@@ -515,8 +356,7 @@ An "odds and ends" module for small, simple commands which don't really fit anyw
 
 __mod_name__ = "Misc"
 
-ID_HANDLER = DisableAbleCommandHandler("id", get_id, pass_args=True)
-INFO_HANDLER = DisableAbleCommandHandler("info", info, pass_args=True)
+
 ECHO_HANDLER = CommandHandler("echo", echo, filters=CustomFilters.sudo_filter)
 MD_HELP_HANDLER = CommandHandler("markdownhelp", markdown_help, filters=Filters.private)
 STATS_HANDLER = CommandHandler("stats", stats, filters=Filters.user(OWNER_ID))
@@ -535,8 +375,6 @@ SRC_HANDLER = CommandHandler("source", src, filters=Filters.private)
 
 dispatcher.add_handler(WALLPAPER_HANDLER)
 dispatcher.add_handler(UD_HANDLER)
-dispatcher.add_handler(ID_HANDLER)
-dispatcher.add_handler(INFO_HANDLER)
 dispatcher.add_handler(ECHO_HANDLER)
 dispatcher.add_handler(MD_HELP_HANDLER)
 dispatcher.add_handler(STATS_HANDLER)
@@ -546,3 +384,4 @@ dispatcher.add_handler(GETLINK_HANDLER)
 dispatcher.add_handler(STAFFLIST_HANDLER)
 dispatcher.add_handler(REDDIT_MEMES_HANDLER)
 dispatcher.add_handler(SRC_HANDLER)
+
