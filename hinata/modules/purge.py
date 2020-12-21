@@ -1,5 +1,6 @@
 from hinata import client, SUDO_USERS
 
+import time
 import asyncio
 from telethon import events
 from telethon.tl.functions.channels import GetParticipantRequest
@@ -27,6 +28,7 @@ async def is_administrator(user_id: int, message):
 
 @client.on(events.NewMessage(pattern="^/purge"))
 async def purge(event):
+    start = time.perf_counter()
     chat = event.chat_id
     msgs = []
 
@@ -52,9 +54,10 @@ async def purge(event):
                 await event.client.delete_messages(chat, msgs)
                 msgs = []
 
+        time_ = time.perf_counter() - start
         await event.client.delete_messages(chat, msgs)
         del_res = await event.client.send_message(
-            event.chat_id, f"Purged {count} messages."
+            event.chat_id, f"Purged {count} messages in {time_:0.2f} sec."
         )
 
         await asyncio.sleep(4)
