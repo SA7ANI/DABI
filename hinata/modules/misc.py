@@ -1,8 +1,6 @@
-import html
 import random, re
 import wikipedia
 
-from typing import Optional, List
 from requests import get
 
 from io import BytesIO
@@ -10,7 +8,6 @@ from random import randint
 import requests as r
 
 from telegram import (
-    Message,
     Chat,
     MessageEntity,
     InlineKeyboardMarkup,
@@ -21,7 +18,7 @@ from telegram import (
 )
 
 from telegram.ext import CommandHandler, run_async, Filters
-from telegram.utils.helpers import escape_markdown, mention_html
+from telegram.utils.helpers import mention_html
 from telegram.error import BadRequest
 
 from hinata import (
@@ -29,13 +26,11 @@ from hinata import (
     OWNER_ID,
     SUDO_USERS,
     SUPPORT_USERS,
-    WHITELIST_USERS,
     WALL_API,
     spamwtc,
 )
-from hinata.__main__ import STATS, USER_INFO, GDPR
+from hinata.__main__ import STATS, GDPR
 from hinata.modules.disable import DisableAbleCommandHandler
-from hinata.modules.helper_funcs.extraction import extract_user
 from hinata.modules.helper_funcs.filters import CustomFilters
 from hinata.modules.helper_funcs.alternate import typing_action, send_action
 

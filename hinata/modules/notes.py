@@ -1,7 +1,6 @@
 import re, ast
 from html import escape
 from io import BytesIO
-from typing import Optional
 
 from telegram import (
     MAX_MESSAGE_LENGTH,
@@ -9,7 +8,6 @@ from telegram import (
     InlineKeyboardMarkup,
     InlineKeyboardButton,
 )
-from telegram import Message
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, MessageHandler, Filters, CallbackQueryHandler
 from telegram.ext.dispatcher import run_async
@@ -54,8 +52,8 @@ ENUM_FUNC_MAP = {
 # Do not async
 def get(bot, update, notename, show_none=True, no_format=False):
     chat_id = update.effective_chat.id
-    chat = update.effective_chat  # type: Optional[Chat]
-    user = update.effective_user  # type: Optional[User]
+    chat = update.effective_chat
+    user = update.effective_user
     conn = connected(bot, update, chat, user.id, need_admin=False)
     if conn:
         chat_id = conn
@@ -65,7 +63,7 @@ def get(bot, update, notename, show_none=True, no_format=False):
         send_id = chat_id
 
     note = sql.get_note(chat_id, notename)
-    message = update.effective_message  # type: Optional[Message]
+    message = update.effective_message
 
     if note:
         # If we're replying to a message, reply to that message (unless it's an error)
@@ -237,8 +235,8 @@ def hash_get(update, context):
 @user_admin
 @typing_action
 def save(update, context):
-    chat = update.effective_chat  # type: Optional[Chat]
-    user = update.effective_user  # type: Optional[User]
+    chat = update.effective_chat
+    user = update.effective_user
     conn = connected(context.bot, update, chat, user.id)
     if not conn == False:
         chat_id = conn
@@ -279,8 +277,8 @@ def save(update, context):
 @typing_action
 def clear(update, context):
     args = context.args
-    chat = update.effective_chat  # type: Optional[Chat]
-    user = update.effective_user  # type: Optional[User]
+    chat = update.effective_chat
+    user = update.effective_user
     msg = update.effective_message
     conn = connected(context.bot, update, chat, user.id)
     note_name, text, data_type, content, buttons = get_note_type(msg)
@@ -317,8 +315,8 @@ def clear(update, context):
 @typing_action
 def list_notes(update, context):
     chat_id = update.effective_chat.id
-    chat = update.effective_chat  # type: Optional[Chat]
-    user = update.effective_user  # type: Optional[User]
+    chat = update.effective_chat
+    user = update.effective_user
     conn = connected(context.bot, update, chat, user.id, need_admin=False)
     if not conn == False:
         chat_id = conn

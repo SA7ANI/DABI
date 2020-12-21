@@ -1,24 +1,22 @@
 #HP Sytem from https://github.com/AnimeKaizoku/SaitamaRobot
 
 import html
-import re
 import os
 import requests
-import subprocess
 
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 from telethon import events
 
 from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update
-from telegram.ext import CallbackContext, CommandHandler
+from telegram.ext import CallbackContext
 from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
 from telegram.utils.helpers import escape_markdown, mention_html
 
 from hinata import (client, OWNER_ID, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS,
                     dispatcher, spamwtc)
-from hinata.__main__ import STATS, TOKEN, USER_INFO
+from hinata.__main__ import TOKEN, USER_INFO
 import hinata.modules.sql.userinfo_sql as sql
 from hinata.modules.disable import DisableAbleCommandHandler
 from hinata.modules.sql.global_bans_sql import is_user_gbanned
@@ -258,10 +256,10 @@ def info(update: Update, context: CallbackContext):
         text += f"\n\n<b>Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
 
     try:
-        spamwtc = spamwtc.get_ban(int(user.id))
-        if spamwtc:
+        spamwatch = spamwtc.get_ban(int(user.id))
+        if spamwatch:
             text += "\n\n<b>This person is Spamwatched!</b>"
-            text += f"\nReason: <pre>{spamwtc.reason}</pre>"
+            text += f"\nReason: <pre>{spamwatch.reason}</pre>"
             text += "\nAppeal at @SpamWatchSupport"
         else:
             pass
@@ -431,7 +429,6 @@ def about_bio(update: Update, context: CallbackContext):
 @run_async
 def set_about_bio(update: Update, context: CallbackContext):
     message = update.effective_message
-    sender_id = update.effective_user.id
     bot = context.bot
 
     if message.reply_to_message:
