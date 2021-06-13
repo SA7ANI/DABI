@@ -14,6 +14,7 @@ from samantha.modules.sql import antiflood_sql as sql
 from samantha.modules.connection import connected
 
 from samantha.modules.helper_funcs.alternate import send_message, typing_action
+from samantha.modules.sql.approve_sql import is_approved
 
 FLOOD_GROUP = 3
 
@@ -32,7 +33,10 @@ def check_flood(update, context) -> str:
     if is_user_admin(chat, user.id):
         sql.update_flood(chat.id, None)
         return ""
-
+    # ignore approved users
+    if is_approved(chat.id, user.id):
+        sql.update_flood(chat.id, None)
+        return
     should_ban = sql.update_flood(chat.id, user.id)
     if not should_ban:
         return ""

@@ -36,6 +36,7 @@ from samantha.modules.helper_funcs.string_handling import split_quotes
 from samantha.modules.helper_funcs.alternate import typing_action
 from samantha.modules.log_channel import loggable
 from samantha.modules.sql import warns_sql as sql
+from samantha.modules.sql.approve_sql import is_approved
 
 WARN_HANDLER_GROUP = 9
 CURRENT_WARNING_FILTER_STRING = "<b>Current warning filters in this chat:</b>\n"
@@ -405,7 +406,10 @@ def list_warn_filters(update, context):
 def reply_filter(update, context) -> str:
     chat = update.effective_chat  # type: Optional[Chat]
     message = update.effective_message  # type: Optional[Message]
-
+    if user.id == 777000:
+        return
+    if is_approved(chat.id, user.id):
+        return
     chat_warn_filters = sql.get_chat_warn_triggers(chat.id)
     to_match = extract_text(message)
     if not to_match:
