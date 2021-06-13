@@ -37,7 +37,6 @@ PM_START_TEXT = f"""
 Hey there! my name is *{dispatcher.bot.first_name}*. If you have any questions on how to use me, Click Help button.
 
 Any issues or need help related to me? join our group [Konoha 11](https://t.me/TheKonoha11).
-Our Update Channel [PatrickUniverse](https://t.me/PatrickUniverse).
 
 Wanna Add me to your Group? Just click the button below!
 """
@@ -164,7 +163,7 @@ def start(update, context):
 
         else:
             update.effective_message.reply_photo(
-                "https://telegra.ph/file/632222ec52f4ad375902f.jpg",
+                "https://telegra.ph/file/9faaa0a7711d64d59597e.jpg",
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
