@@ -1,7 +1,7 @@
-hinata/config.py
+samantha/config.py
 logfile
-hinata.session
-hinata.session-journal
+samantha.session
+samantha.session-journal
 *.pyc
 .idea/
 .project
@@ -14,5 +14,5 @@ sticker.png
 kangsticker.png
 kangsticker.tgs
 kangsticker
-hinata.mp3
+samantha.mp3
 gpic.png

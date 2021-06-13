@@ -1,1 +1,1 @@
-worker: python3 -m hinata
+worker: python3 -m samantha
