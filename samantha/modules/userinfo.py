@@ -481,6 +481,12 @@ def __user_info__(user_id):
 
 
 __help__ = """
+*AFK:*
+When marked as AFK, any mentions will be replied to with a message to say you're not available!
+
+ • /afk <reason>: Mark yourself as AFK.
+ • brb <reason>: Same as the afk command - but not a command.
+
 *ID:*
  • /id: get the current group id. If used by replying to a message, gets that user's id.
  • /gifid: reply to a gif to me to tell you its file ID.
@@ -508,7 +514,7 @@ Examples:
  Come and see [HP System explained](https://telegram.dog/PatrickUniverse/25)
 """
 
-__mod_name__ = "Info"
+__mod_name__ = "AFK & Info"
 
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio)
 GET_BIO_HANDLER = DisableAbleCommandHandler("bio", about_bio)

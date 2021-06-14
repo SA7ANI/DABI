@@ -103,14 +103,14 @@ def __gdpr__(user_id):
     sql.rm_afk(user_id)
 
 
-__help__ = """
-When marked as AFK, any mentions will be replied to with a message to say you're not available!
-
- • /afk <reason>: Mark yourself as AFK.
- • brb <reason>: Same as the afk command - but not a command.
-"""
-
-__mod_name__ = "AFK"
+#__help__ = """
+#When marked as AFK, any mentions will be replied to with a message to say you're not available!
+#
+# • /afk <reason>: Mark yourself as AFK.
+# • brb <reason>: Same as the afk command - but not a command.
+#"""
+#
+#__mod_name__ = "AFK"
 
 
 AFK_HANDLER = DisableAbleCommandHandler("afk", afk)
