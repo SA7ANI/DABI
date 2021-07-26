@@ -347,6 +347,9 @@ An "odds and ends" module for small, simple commands which don't really fit anyw
  • /reverse : Reverse searches image or stickers on google.
  • /gdpr: Deletes your information from the bot's database. Private chats only.
  • /markdownhelp: Quick summary of how markdown works in telegram - can only be called in private chats.
+ • /weather <city>: Gets weather information of particular place!
+
+ \* To prevent spams weather command and the output will be deleted after 30 seconds
 """
 
 __mod_name__ = "Misc"
