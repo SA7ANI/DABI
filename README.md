@@ -14,8 +14,6 @@ simple to use. Note that this project uses well-known Telegram-bot of it's time 
 
 Can be found on telegram as [SAM](https://t.me/MissSamanthaBot).
 
-Samantha is based on [Skylee](https://github.com/starry69/skyleebot)
-
 <details>
   <summary>Installation</summary>
 
@@ -152,7 +150,7 @@ through the `/stats` command, which is only available to the bot owner.
 ## Special Credits
 
 * [PaulSonOfLars](https://github.com/PaulSonOfLars) - For Marie and Rosecreator, inspiration to do many things.
-* [Starry69](https://github.com/starry69) - For Skylee Fork.
+* [Starry69](https://github.com/starry69) - For Skylee source code.
 * [Skittle](https://github.com/Skittle) - For Stickers module and memes in extras module.
 * [1mavarick1](https://github.com/1maverick1) - For Introducing Global Mutes and other things.
 * [AyraHikari](https://github.com/AyraHikari) - For Reworked Welcome, Fed v2, Weather modules and some other stuffs.

@@ -405,6 +405,7 @@ def list_warn_filters(update, context):
 @loggable
 def reply_filter(update, context) -> str:
     chat = update.effective_chat  # type: Optional[Chat]
+    user = update.effective_user  # type: Optional[User]
     message = update.effective_message  # type: Optional[Message]
     if user.id == 777000:
         return
