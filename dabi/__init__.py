@@ -33,6 +33,8 @@ if ENV:
         raise Exception("Your OWNER_ID env variable is not a valid integer.")
 
     MESSAGE_DUMP = os.environ.get("MESSAGE_DUMP", None)
+    SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
+    EVENT_LOGS = os.environ.get("EVENT_LOGS", None)
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
 
     try:
@@ -96,6 +98,8 @@ else:
         raise Exception("Your OWNER_ID variable is not a valid integer.")
 
     MESSAGE_DUMP = Config.MESSAGE_DUMP
+    EVENT_LOGS = Config.EVENT_LOGS
+    SUPPORT_CHAT = Config.SUPPORT_CHAT
     OWNER_USERNAME = Config.OWNER_USERNAME
 
     try:
