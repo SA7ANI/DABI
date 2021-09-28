@@ -192,7 +192,7 @@ def new_member(update, context):
             elif new_mem.id == context.bot.id:
                 update.effective_message.reply_text(
                     "Hey {}, I'm {}! Thank you for adding me to {}"
-                    " and be sure to join our group: @TheKonoha11 to know more about updates and tricks!".format(
+                    " and be sure to Give me full Admin permission to get my potential use.".format(
                         user.first_name, context.bot.first_name, chat_name
                     ),
                     reply_to_message_id=reply,
