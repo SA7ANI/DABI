@@ -36,6 +36,7 @@ from dabi.modules.helper_funcs.extraction import (
     extract_user_and_text,
 )
 from dabi.modules.helper_funcs.misc import send_to_list
+from dabi.modules.helper_funcs.filters import CustomFilters
 from dabi.modules.helper_funcs.alternate import typing_action
 
 GBAN_ENFORCE_GROUP = 6
