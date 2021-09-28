@@ -1,7 +1,7 @@
-# Samantha Bot
+# LORD DABI Bot
 
-[![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/SA7ANI/MissSamantha/?ref=repository-badge)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/223b5710f2fa41d58775094ee65b6957)](https://app.codacy.com/gh/SA7ANI/MissSamantha?utm_source=github.com&utm_medium=referral&utm_content=SA7ANI/MissSamantha&utm_campaign=Badge_Grade)
+[![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/SA7ANI/DABI/?ref=repository-badge)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/223b5710f2fa41d58775094ee65b6957)](https://app.codacy.com/gh/SA7ANI/DABI?utm_source=github.com&utm_medium=referral&utm_content=SA7ANI/DABI&utm_campaign=Badge_Grade)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
@@ -21,7 +21,7 @@ Can be found on telegram as [SAM](https://t.me/MissSamanthaBot).
 
 Once you've setup your database and your configuration (see below) is complete, simply run:
 
-`python3 -m samantha`
+`python3 -m dabi`
 
 ## Setting up the bot (Read this before trying to use!)
 
@@ -33,7 +33,7 @@ This is because markdown parsing is done by iterating through a dict, which are 
 There are two possible ways of configuring your bot: a config.py file, or ENV variables.
 
 The prefered version is to use a `config.py` file, as it makes it easier to see all your settings grouped together.
-This file should be placed in your `samantha` folder, alongside the `__main__.py` file . 
+This file should be placed in your `dabi` folder, alongside the `__main__.py` file . 
 This is where your bot token will be loaded from, as well as your database URI (if you're using a database), and most of 
 your other settings.
 
@@ -42,7 +42,7 @@ defaults set in the sample_config, hence making it easier to upgrade.
 
 An example `config.py` file could be:
 ```
-from samantha.sample_config import Config
+from dabi.sample_config import Config
 
 
 class Development(Config):
@@ -128,7 +128,7 @@ All that is needed is that your .py file be in the modules folder.
 
 To add commands, make sure to import the dispatcher via
 
-`from samantha import dispatcher`.
+`from dabi import dispatcher`.
 
 You can then add commands using the usual
 
@@ -158,9 +158,9 @@ through the `/stats` command, which is only available to the bot owner.
 * [MrYacha](https://github.com/MrYacha) - For Welcome Security base, Connections and other things.
 * [ATechnoHazard](https://github.com/ATechnoHazard) - For many stuffs.
 
-And to all other [contributors](https://github.com/SA7ANI/MissSamantha/graphs/contributors) not listed here.
+And to all other [contributors](https://github.com/SA7ANI/DABI/graphs/contributors) not listed here.
 
 ### DeepSource Stats
 
-[![DeepSource](https://deepsource.io/gh/SA7ANI/MissSamantha.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/SA7ANI/MissSamantha/?ref=repository-badge)
-[![DeepSource](https://deepsource.io/gh/SA7ANI/MissSamantha.svg/?label=resolved+issues&show_trend=true)](https://deepsource.io/gh/SA7ANI/MissSamantha/?ref=repository-badge)
+[![DeepSource](https://deepsource.io/gh/SA7ANI/DABI.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/SA7ANI/DABI/?ref=repository-badge)
+[![DeepSource](https://deepsource.io/gh/SA7ANI/DABI.svg/?label=resolved+issues&show_trend=true)](https://deepsource.io/gh/SA7ANI/DABI/?ref=repository-badge)

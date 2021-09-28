@@ -1,7 +1,7 @@
-samantha/config.py
+dabi/config.py
 logfile
-samantha.session
-samantha.session-journal
+dabi.session
+dabi.session-journal
 *.pyc
 .idea/
 .project
@@ -14,5 +14,5 @@ sticker.png
 kangsticker.png
 kangsticker.tgs
 kangsticker
-samantha.mp3
+dabi.mp3
 gpic.png

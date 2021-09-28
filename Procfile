@@ -1,1 +1,1 @@
-worker: python3 -m samantha
+web: python3 -m dabi
