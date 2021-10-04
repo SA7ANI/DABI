@@ -147,18 +147,9 @@ through the `/stats` command, which is only available to the bot owner.
 
 </details>
 
-## Special Credits
+### Credits
 
-* [PaulSonOfLars](https://github.com/PaulSonOfLars) - For Marie and Rosecreator, inspiration to do many things.
-* [Starry69](https://github.com/starry69) - For Skylee source code.
-* [Skittle](https://github.com/Skittle) - For Stickers module and memes in extras module.
-* [1mavarick1](https://github.com/1maverick1) - For Introducing Global Mutes and other things.
-* [AyraHikari](https://github.com/AyraHikari) - For Reworked Welcome, Fed v2, Weather modules and some other stuffs.
-* [RealAkito](https://github.com/RealAkito) - For Reworked Federation, reverse search and other things.
-* [MrYacha](https://github.com/MrYacha) - For Welcome Security base, Connections and other things.
-* [ATechnoHazard](https://github.com/ATechnoHazard) - For many stuffs.
-
-And to all other [contributors](https://github.com/SA7ANI/DABI/graphs/contributors) not listed here.
+Well, it's all in the commit history and [contributors](https://github.com/SA7ANI/DABI/graphs/contributors) Feel free to open pull requests should any be missing.
 
 ### DeepSource Stats
 
