@@ -44,7 +44,7 @@ Wanna Add me to your Group? Just click the button below!
 buttons = [
     [
         InlineKeyboardButton(
-            text="Add to Group 👥", url="t.me/LordDabiBot?startgroup=true"
+            text="Add Dabi to Group 👥", url="t.me/LordDabiBot?startgroup=true"
         ),
         InlineKeyboardButton(text="Help & Commands ❔", callback_data="help_back"),
     ]
